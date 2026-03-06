@@ -2,8 +2,8 @@
 
 class Utils
 {
-    public static $projectFilePath = "http://localhost/image-gallery";
-    public static $uploadPath = "uploads";
+    public static $projectFilePath = "http://localhost/shop-wb";
+    public static $uploadPath = "images";
 
     /**
      * Takes an array of $_POST[] keys and checks if any 

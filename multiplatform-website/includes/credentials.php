@@ -6,5 +6,5 @@ $credentials = [
   "server" => "localhost",
   "user" => "root",
   "pass" => "",
-  "dbName" => "mp-website-shop",
+  "dbName" => "shopDB",
 ];

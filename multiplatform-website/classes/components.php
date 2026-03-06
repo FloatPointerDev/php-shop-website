@@ -8,7 +8,7 @@ class Components {
      * $stylesheets - array
      * $scripts - array
      */
-    public static function pageHeader($pageTitle, $stylesheets, $scripts) {
+    public static function pageHeader($pageTitle, $stylesheets) {
         require "components/header.php";
     }
 
@@ -19,22 +19,37 @@ class Components {
         require "components/footer.php";
     }
 
-    /**
-     * Output all gallery images in a grid.
-     */
-    public static function displayAllGalleryImages($images)
+    public static function displayProduct($products)
     {
-        if (empty($images))
+        if (empty($products)) {
+            require "components/no-books-found.php";
             return;
-
-        foreach ($images as $image) {
-            $filename = Utils::escape($image["file_name"]);
-            $thumbnail = Utils::escape($image["thumb_name"]);
-
-            $filepath = Utils::$uploadPath . "/" . $filename;
-            $thumbpath = Utils::$uploadPath . "/" . $thumbnail;
-
-            require "components/gallery-image.php";
         }
+
+        foreach ($products as $product) {
+            $productId = Utils::escape($product["product_id"]);
+            $productName = Utils::escape($product["product_name"]);
+            $stock = Utils::escape($product["stock"]);
+            $price = Utils::escape($product["price"]);
+            $filename = Utils::escape($product["filename"]);
+
+            require "components/product-preview.php";
+        }
+    }
+
+    public static function displaySingleProduct($product)
+    {
+        if (empty($product)) {
+            require "components/no-single-product-found.php";
+            return;
+        }
+
+        $productId = Utils::escape($product["product_id"]);
+        $productName = Utils::escape($product["product_name"]);
+        $stock = Utils::escape($product["stock"]);
+        $price = Utils::escape($product["price"]);
+        $filename = Utils::escape($product["filename"]);
+
+        require "components/single-product.php";
     }
 }
