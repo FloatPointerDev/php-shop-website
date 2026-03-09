@@ -1,11 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #111111;
 }
 
-h1, h2, p {
+h1, h2, h3, p {
   margin: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  color: white;
 }
 
 ul {
@@ -33,19 +35,58 @@ ul li a:hover {
 }
 
 .page-footer {
-    border-top: 1px dotted black;
+    border-top: 1px dotted darkgray;
     margin-top: 2rem;
     padding: 0.5rem 0;
     text-align: center;
+    bottom: 0;
 }
 
 .see-pricing-button {
   background-color: #333333;
   color: white;
   font-size: 15px;
-  padding: 12px;
-  margin: 10px;
+  padding: 10px;
+  margin: 10em;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.card {
+    background-color: #333333;
+    border-radius: 7px;
+    color: black;
+    display: inline-grid;
+    padding: 1rem;
+    text-align: center;
+    margin: 1%;
+}
+
+.product-row-desktop {
+  padding: 2%;
+  margin-top: 5%;
+}
+
+.logo {
+  float: left;
+}
+
+.page-wrapper {
+  background-color: #111111;
+}
+
+.form {
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.centred-input {
+    text-align: center;
 }

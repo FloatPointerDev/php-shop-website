@@ -30,10 +30,11 @@
 <body>
     <div class="page-wrapper">
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="shop.php">Shop</a></li>
-            <li><a href="search.php">Search</a></li>
+            <p class="logo">Test</p>
             <li><a href="about.php">About</a></li>
+            <li><a href="search.php">Search</a></li>
+            <li><a href="shop.php">Shop</a></li>
+            <li><a href="index.php">Home</a></li>
         </ul>
 
         <main>

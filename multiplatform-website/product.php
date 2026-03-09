@@ -11,7 +11,7 @@ if (!isset($_GET["id"]) or !is_numeric($_GET["id"])) {
 
 require "classes/components.php";
 
-Components::pageHeader("Products", ["main"], []);
+Components::pageHeader("Products", ["stylesheet"], []);
 
 require "classes/products.php";
 
