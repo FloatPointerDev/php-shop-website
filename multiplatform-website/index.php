@@ -9,7 +9,7 @@ Components::pageHeader("Home", ["stylesheet"], []);
 
 ?>
 
-<p>test</p>
+<h1>See our full range of offers here on our website</h1>
 
 <button class="see-pricing-button"><a href="shop.php">See Pricing</a></button>
 

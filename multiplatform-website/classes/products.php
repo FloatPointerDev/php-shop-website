@@ -6,12 +6,12 @@ require_once "classes/utils.php";
 
 class Products
 {
-    public static function getproducts($sql)
+    public static function getproducts($sql, $params = [])
     {
         $conn = Connection::create();
 
         $stmt = $conn->prepare($sql);
-        $stmt->execute();
+        $stmt->execute($params);
         $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $conn = null;
