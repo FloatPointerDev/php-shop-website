@@ -48,6 +48,7 @@ ul li a:hover {
   padding: 0.5rem 0;
   text-align: center;
   bottom: 0;
+  color: white;
 }
 
 .see-pricing-button {
@@ -91,6 +92,7 @@ ul li a:hover {
 
 .logo {
   float: left;
+  color: white;
 }
 
 .page-wrapper {

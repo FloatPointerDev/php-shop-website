@@ -5,13 +5,13 @@ session_start();
 require "classes/utils.php";
 
 if (!isset($_GET["id"]) or !is_numeric($_GET["id"])) {
-    header("Location: " . Utils::$projectFilePath . "/feed.php");
+    header("Location: " . Utils::$projectFilePath . "/shop.php");
     exit;
 }
 
 require "classes/components.php";
 
-Components::pageHeader("Products", ["stylesheet"], []);
+Components::pageHeader("Products", ["stylesheet"], ["button"]);
 
 require "classes/products.php";
 

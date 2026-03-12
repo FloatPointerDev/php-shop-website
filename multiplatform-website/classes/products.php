@@ -6,7 +6,7 @@ require_once "classes/utils.php";
 
 class Products
 {
-    public static function getproducts($sql, $params = [])
+    public static function getProducts($sql, $params = [])
     {
         $conn = Connection::create();
 

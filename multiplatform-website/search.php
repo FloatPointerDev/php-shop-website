@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -23,6 +22,7 @@ Components::pageHeader("Search", ["stylesheet"], []);
 <?php 
 
 require "classes/products.php";
+require "classes/sql.php";
 
 $queryParams = $paramsArray = [];
 $queryParams["sortField"] = $_GET["sortField"] ?? "product_name";

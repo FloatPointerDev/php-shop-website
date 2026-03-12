@@ -7,7 +7,7 @@ require "classes/components.php";
 require "classes/sql.php";
 
 
-Components::pageHeader("Shop", ["stylesheet"]);
+Components::pageHeader("Shop", ["stylesheet"], []);
 ?>
 
 

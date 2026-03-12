@@ -2,7 +2,7 @@
 
 class Utils
 {
-    public static $projectFilePath = "http://localhost/shop-wb";
+    public static $projectFilePath = "http://localhost/multiplatform-website";
     public static $uploadPath = "images";
 
     /**
@@ -31,13 +31,5 @@ class Utils
     public static function redirect($destination)
     {
         header("Location: " . self::$projectFilePath . "/$destination.php");
-    }
-
-    // Get the file extension of a given file
-    public static function getFileExtension($filename)
-    {
-        $parts = explode(".", $filename);
-
-        return end($parts);
     }
 }

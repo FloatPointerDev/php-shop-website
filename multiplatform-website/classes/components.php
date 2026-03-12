@@ -8,7 +8,7 @@ class Components {
      * $stylesheets - array
      * $scripts - array
      */
-    public static function pageHeader($pageTitle, $stylesheets) {
+    public static function pageHeader($pageTitle, $stylesheets, $scripts) {
         require "components/header.php";
     }
 

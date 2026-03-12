@@ -8,6 +8,6 @@
 
         <p class="price">Price: <?php echo $price; ?></p>
 
-        <button type="button" class="button">Add to Basket</button>
+        <button onclick="GoToPurchase(<?php echo $productId; ?>);">Purchase</button>
     </div>
 </div>

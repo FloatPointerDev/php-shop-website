@@ -11,6 +11,15 @@ CREATE TABLE products (
     filename VARCHAR(64) NOT NULL
 );
 
+CREATE TABLE purchase (
+    purchase_id INT AUTO_INCREMENT PRIMARY KEY,
+    purchase_cost INT NOT NULL,
+    billing INT NOT NULL,
+    user_address VARCHAR(64) NOT NULL,
+    postcode VARCHAR(8) NOT NULL,
+    product_id INT
+);
+
 INSERT INTO products (product_id, product_name, stock, price, filename) VALUES
 (1, "product_1", 100, 800.00, "test-cover.jpg"),
 (2, "product_2", 90, 1.99, "test-cover.jpg"),
