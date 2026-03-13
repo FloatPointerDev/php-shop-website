@@ -22,7 +22,7 @@ Components::pageHeader("Search", ["stylesheet"], []);
 <?php 
 
 require "classes/products.php";
-require "classes/sql.php";
+require_once "classes/sql.php";
 
 $queryParams = $paramsArray = [];
 $queryParams["sortField"] = $_GET["sortField"] ?? "product_name";
@@ -38,7 +38,7 @@ $products = Products::getproducts(SQL::getProductsWithParams($queryParams), $par
 ?>
 
 <div class="grid">
-    <?php Components::displayProducts($products); ?>
+    <?php Components::displayProduct($products); ?>
 </div>
 
 <?php

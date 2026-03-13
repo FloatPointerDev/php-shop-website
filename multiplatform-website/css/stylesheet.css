@@ -110,3 +110,14 @@ ul li a:hover {
   text-align: center;
 }
 
+.mandatory {
+  color: red;
+}
+
+.product-info {
+  color: white;
+}
+
+.product_name {
+  color: white;
+}

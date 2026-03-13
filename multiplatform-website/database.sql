@@ -11,10 +11,10 @@ CREATE TABLE products (
     filename VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE purchase (
+CREATE TABLE purchases (
     purchase_id INT AUTO_INCREMENT PRIMARY KEY,
     purchase_cost INT NOT NULL,
-    billing INT NOT NULL,
+    bank_number INT NOT NULL,
     user_address VARCHAR(64) NOT NULL,
     postcode VARCHAR(8) NOT NULL,
     product_id INT

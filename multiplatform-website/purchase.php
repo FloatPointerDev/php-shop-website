@@ -1,8 +1,8 @@
 <?php
-
 session_start();
 
 require "classes/utils.php";
+require "classes/purchaseProcessing.php";
 
 if (!isset($_GET["id"]) or !is_numeric($_GET["id"])) {
     header("Location: " . Utils::$projectFilePath . "/shop.php");
@@ -14,15 +14,22 @@ require "classes/components.php";
 Components::pageHeader("Products", ["stylesheet"], ["button"]);
 
 ?>
-<form action="/action_page.php">
-  <label for="banknum">Bank Number</label>
-  <input type="text" id="banknum" name="banknum"><br><br>
-  <label for="address">Address</label>
-  <input type="text" id="address" name="address"><br><br>
-  <label for="postcode">Postcode</label>
-  <input type="text" id="postcode" name="postcode"><br><br>
+
+<p class="mandatory">* Field is mandatory</p>
+
+<form action="classes/purchaseProcessing.php" method="post">
+  <label for="banknum">Bank Number*</label>
+  <input type="text" name="banknum"><br><br>
+  <label for="address">Address*</label>
+  <input type="text" name="address"><br><br>
+  <label for="postcode">Postcode*</label>
+  <input type="text" name="postcode"><br><br>
   <input type="submit" value="Submit">
 </form>
+
+<p class="mandatory"><?php echo $banknumErr ?></p>
+<p class="mandatory"><?php echo $addressErr ?></p>
+<p class="mandatory"><?php echo $postcodeErr ?></p>
 
 <?php
 

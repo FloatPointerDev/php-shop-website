@@ -13,8 +13,9 @@ Components::pageHeader("Home", ["stylesheet"], []);
 
 <ol type="1">
   <li>Allow us to collect data on your address</li>
-  <li>Allow us to collect data on your</li>
-  <li>Allow us to collect data on your</li>
+  <li>Allow us to collect data on your postcode</li>
+  <li>Allow us to collect data on your ip address</li>
+  <li>Allow us to collect data on your bank details</li>
 </ol>
 
 <?php
