@@ -29,11 +29,11 @@ $queryParams["sortField"] = $_GET["sortField"] ?? "product_name";
 
 if (isset($_GET["search"]) && $_GET["search"] != "") {
     $queryParams["searchTerm"] = $_GET["search"];
-    // Add wildcards to search term to make it more flexible
     array_push($paramsArray, "%" . $_GET["search"] . "%");
 }
 
-$products = Products::getproducts(SQL::getProductsWithParams($queryParams), $paramsArray);
+// Pass the $queryParams so the SQL builder knows if it needs to add "WHERE"
+$products = Products::getProducts(SQL::getProductsWithParams($queryParams), $paramsArray);
 
 ?>
 

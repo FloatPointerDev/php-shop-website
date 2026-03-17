@@ -22,7 +22,7 @@ class Components {
     public static function displayProduct($products)
     {
         if (empty($products)) {
-            require "components/no-books-found.php";
+            require "components/no-single-product-found.php";
             return;
         }
 
