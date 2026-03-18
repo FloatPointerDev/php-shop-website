@@ -2,10 +2,15 @@
 
 class SQL
 {
+    // SQL queriea for read, insert, delete and update
     public static $getAllProducts = "SELECT * FROM products";
     public static $getSingleProduct = "SELECT * FROM products WHERE product_id = ?";
     public static $decrementStockNumber = "UPDATE products SET stock = stock - 1 WHERE product_id = ?";
+    public static $placeOrder = "INSERT INTO purchases (purchase_cost, bank_number, user_address, postcode, product_id) VALUES
+    (?, ?, ?, ?, ?)";
+    public static $deleteFromProducts = "DELETE FROM products WHERE product_id = ?";
 
+    // Get products from the parameters
     public static function getProductsWithParams($params)
     {
         $sql = self::$getAllProducts;

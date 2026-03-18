@@ -10,8 +10,8 @@ if (!isset($_GET["id"]) or !is_numeric($_GET["id"])) {
 }
 
 require "classes/components.php";
-$banknumErr = $addressErr = $addressErr = "";
-$banknum = $address = $address = "";
+$banknumErr = $addressErr = $postcodeErr = "";
+$banknum = $address = $postcode = "";
 
 Components::pageHeader("Products", ["stylesheet"], ["button"]);
 
@@ -31,13 +31,10 @@ Components::pageHeader("Products", ["stylesheet"], ["button"]);
 
 <p class="mandatory"><?php echo $banknumErr ?></p>
 <p class="mandatory"><?php echo $addressErr ?></p>
-<p class="mandatory"><?php echo $addressErr ?></p>
+<p class="mandatory"><?php echo $postcodeErr ?></p>
 
 <?php
 
-require "classes/products.php";
-
-$product = Products::getSingleProduct($_GET["id"]);
 Components::pageFooter();
 
 session_destroy();

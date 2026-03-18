@@ -1,5 +1,7 @@
 <?php
 
+// Search for specific items
+
 session_start();
 
 require "classes/utils.php";
@@ -24,6 +26,7 @@ Components::pageHeader("Search", ["stylesheet"], []);
 require "classes/products.php";
 require_once "classes/sql.php";
 
+// Get user input
 $queryParams = $paramsArray = [];
 $queryParams["sortField"] = $_GET["sortField"] ?? "product_name";
 
@@ -32,7 +35,7 @@ if (isset($_GET["search"]) && $_GET["search"] != "") {
     array_push($paramsArray, "%" . $_GET["search"] . "%");
 }
 
-// Pass the $queryParams so the SQL builder knows if it needs to add "WHERE"
+// Pass so mySQL knows if it needs to add WHERE clause or not
 $products = Products::getProducts(SQL::getProductsWithParams($queryParams), $paramsArray);
 
 ?>

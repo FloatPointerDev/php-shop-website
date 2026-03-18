@@ -8,11 +8,6 @@ require "classes/sql.php";
 
 
 Components::pageHeader("Shop", ["stylesheet"], []);
-?>
-
-
-
-<?php
 
 require "classes/products.php";
 

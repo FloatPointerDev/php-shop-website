@@ -19,6 +19,7 @@ class Components {
         require "components/footer.php";
     }
 
+    // Get and display product
     public static function displayProduct($products)
     {
         if (empty($products)) {
@@ -37,6 +38,7 @@ class Components {
         }
     }
 
+    // Get and display single product
     public static function displaySingleProduct($product)
     {
         if (empty($product)) {
