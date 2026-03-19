@@ -41,7 +41,6 @@ class Products
 
         $stmt = $conn->prepare(SQL::$placeOrder);
         $stmt->execute([$cost, $banknum, $address, $postcode, $productId]);
-        $stmt->fetch(PDO::FETCH_ASSOC);
 
         $conn = null;
 
@@ -55,7 +54,6 @@ class Products
 
         $stmt = $conn->prepare(SQL::$decrementStockNumber);
         $stmt->execute([$productId]);
-        $stmt->fetch(PDO::FETCH_ASSOC);
 
         $conn = null;
 
@@ -69,7 +67,6 @@ class Products
 
         $stmt = $conn->prepare(SQL::$deleteFromProducts);
         $stmt->execute([$productId]);
-        $stmt->fetch(PDO::FETCH_ASSOC);
 
         $conn = null;
 

@@ -6,25 +6,27 @@ class purchaseProcessing {
         I would also hash banknum, however I didn't consider that when setting up the database table, and I can't be bothered to change 
         Because of the time constraints */
 
+        $banknumSafe = $addressSafe = $postcodeSafe = null;
+
         // Get banknum from POST form
         if (!empty($_POST["banknum"])) {
-            $banknum =  htmlspecialchars($_POST['banknum']);
+            $banknumSafe =  htmlspecialchars($_POST['banknum']);
         } else {
             $banknumErr = "bank number is required";
         }
 
         // Get address from POST form
         if (!empty($_POST["address"])) {
-            $address =  htmlspecialchars($_POST['address']);
+            $addressSafe =  htmlspecialchars($_POST['address']);
         } else {
             $addressErr = "address is required";
         }
 
         // Get Postcode from POST form
-        if (!empty($_POST["postcode"]) < 8) {
-            $postcode =  htmlspecialchars($_POST['postcode']);
+        if (!empty($_POST["postcode"]) && strlen($_POST["postcode"])) {
+            $postcodeSafe =  htmlspecialchars($_POST['postcode']);
         } else {
-            $postcodeErr = "postcode is required and must be longer than 8 characters";
+            $postcodeErr = "postcode is required and must be 8 characters or less";
         }
 
         require "products.php";
@@ -32,19 +34,22 @@ class purchaseProcessing {
 
         // Get ID, cost and Stock
         $productId = Products::getSingleProduct($_POST["product_id"]);
-        $cost = Components::displayProduct($_POST["price"]);
-        $stock = Components::displayProduct($_POST["stock"]);
+        $rawId = $productId['product_id'];
+        $cost = $productId['price'];
+        $stock = $productId['stock'];
 
         // SQL query to read user details into database and decrement stock number
-        Products::readIntoDatabase($cost, $banknum, $address, $postcode, $productId);
-        Products::decrementDatabaseStock($productId);
+        Products::readIntoDatabase($cost, $banknumSafe, $addressSafe, $postcodeSafe, $rawId);
+        Products::decrementDatabaseStock($rawId);
 
         // Delete if out of stock
-        if ($stock == 0) {
-            Products::deleteWhenStockZero($productId);
+        if ($stock <= 1) {
+            Products::deleteWhenStockZero($rawId);
         }
 
         // Redirect to success.php when done
         header("Location: " . Utils::$projectFilePath . "/success.php");
     }
 }
+
+purchaseProcessing::process_to_database();

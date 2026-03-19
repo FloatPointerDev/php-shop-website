@@ -9,7 +9,7 @@ class Connection
     public static function create()
     {
         // Include the credentials for DB connection
-        require "includes/credentials.php";
+        require __DIR__ . "/../includes/credentials.php";
 
         try {
             $server = $credentials["server"];
