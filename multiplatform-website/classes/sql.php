@@ -24,4 +24,10 @@ class SQL
 
         return $sql;
     }
+
+    public static function getCart($cartId) {
+        $sql = self::$getAllProducts;
+        $sql .= " WHERE product_id = ?";
+        return $sql;
+    }
 }

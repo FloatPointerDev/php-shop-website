@@ -38,6 +38,9 @@ class purchaseProcessing {
         $cost = $productId['price'];
         $stock = $productId['stock'];
 
+        $cart = $rawId;
+        setcookie("Cart", $cart, time() + (86400 * 30), "/");
+
         // SQL query to read user details into database and decrement stock number
         Products::readIntoDatabase($cost, $banknumSafe, $addressSafe, $postcodeSafe, $rawId);
         Products::decrementDatabaseStock($rawId);

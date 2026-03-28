@@ -31,6 +31,7 @@
     <div class="page-wrapper">
         <ul>
             <p class="logo">Test</p>
+            <li><a href="cart.php">Cart</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="search.php">Search</a></li>
             <li><a href="shop.php">Shop</a></li>

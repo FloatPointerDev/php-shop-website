@@ -54,4 +54,21 @@ class Components {
 
         require "components/single-product.php";
     }
+
+    public static function displayCart($products) {
+        if (empty($products)) {
+            require "components/empty-cart.php";
+            return;
+        }
+
+        foreach ($products as $product) {
+            $productId = Utils::escape($product["product_id"]);
+            $productName = Utils::escape($product["product_name"]);
+            $stock = Utils::escape($product["stock"]);
+            $price = Utils::escape($product["price"]);
+            $filename = Utils::escape($product["filename"]);
+
+            require "components/product-preview.php";
+        }
+    }
 }
